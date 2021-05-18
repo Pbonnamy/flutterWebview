@@ -66,13 +66,15 @@ class _MyHomePageState extends State<MyHomePage> {
       body:
       WillPopScope(
         onWillPop: () => _handleBack(context),
-        child : WebView(
-        initialUrl: 'http://sosdrolesdedames.fr/',
-          onWebViewCreated: (WebViewController webViewController) {
-            _controllerCompleter.future.then((value) => _controller = value);
-            _controllerCompleter.complete(webViewController);
-          },
-      ),
+        child : SafeArea(
+          child :WebView(
+            initialUrl: 'http://sosdrolesdedames.fr/',
+              onWebViewCreated: (WebViewController webViewController) {
+                _controllerCompleter.future.then((value) => _controller = value);
+                _controllerCompleter.complete(webViewController);
+              },
+          ),
+        ),
     ),
     );
   }

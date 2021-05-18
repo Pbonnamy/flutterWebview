@@ -6,7 +6,7 @@
    <application
         android:label="SOS DRÔLES DE DAMES"
         android:usesCleartextTraffic="true"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/logo">
 
         <activity
             android:name=".MainActivity"
