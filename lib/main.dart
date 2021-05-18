@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SOS DRÔLES DE DAMES',
+      title: 'Sos Drôles de Dames',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'SOS DRÔLES DE DAMES'),
+      home: MyHomePage(title: 'Sos Drôles de Dames'),
     );
   }
 }
@@ -66,16 +66,19 @@ class _MyHomePageState extends State<MyHomePage> {
       body:
       WillPopScope(
         onWillPop: () => _handleBack(context),
-        child : SafeArea(
-          child :WebView(
-            initialUrl: 'http://sosdrolesdedames.fr/',
-              onWebViewCreated: (WebViewController webViewController) {
-                _controllerCompleter.future.then((value) => _controller = value);
-                _controllerCompleter.complete(webViewController);
-              },
+        child : Container(
+          color: Colors.pinkAccent,
+          child : SafeArea(
+            child : WebView(
+              initialUrl: 'http://sosdrolesdedames.fr/',
+                onWebViewCreated: (WebViewController webViewController) {
+                  _controllerCompleter.future.then((value) => _controller = value);
+                  _controllerCompleter.complete(webViewController);
+                },
+            ),
           ),
         ),
-    ),
+      ),
     );
   }
 }

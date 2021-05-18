@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
    <application
-        android:label="SOS DRÔLES DE DAMES"
+        android:label="Sos Drôles de Dames"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/logo">
 
